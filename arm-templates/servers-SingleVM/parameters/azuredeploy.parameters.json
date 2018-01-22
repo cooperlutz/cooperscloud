@@ -1,0 +1,36 @@
+﻿{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmName": {
+      "value": "cceapsql01"
+    },
+    "vmSize": {
+      "value": "Standard_DS2_v2"
+    },
+    "availabilitySet": {
+      "value": "cceasql-as"
+    },
+    "adminUsername": {
+      "value": "administrator"
+    },
+    "adminPassword": {
+      "value": "Password123"
+    },
+    "virtualNetworkSubnet": {
+      "value": "CC-EA-Prod-Backend-Sub-10.0.0.0_20"
+    },
+    "virtualNetworkName": {
+      "value": "CC-EA-Prod-Infrastructure-VNet-10.0.0.0_16"
+    },
+    "virtualNetworkResourceGroup": {
+      "value": "cc-rg"
+    },
+    "diagnosticsStoreUri": {
+      "value": "http://diagstore.blob.core.windows.net"
+    },
+    "azureRegion": {
+      "value": "eastus"
+    }
+  }
+}
