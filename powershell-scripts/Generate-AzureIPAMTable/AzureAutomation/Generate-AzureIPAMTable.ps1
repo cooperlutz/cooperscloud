@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.0
+.VERSION 1.1
 
 .GUID c0401797-836f-4898-b33d-46c8fc4b822c
 
@@ -36,9 +36,6 @@
  Azure Runbook to generate an IP table from your Azure environment 
 
 #> 
-
-Param()
-
 
 # Define Parameters
 Param(
