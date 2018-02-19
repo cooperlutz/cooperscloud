@@ -1,7 +1,7 @@
 
 <#PSScriptInfo
 
-.VERSION 1.1
+.VERSION 1.2
 
 .GUID c0401797-836f-4898-b33d-46c8fc4b822c
 
@@ -387,15 +387,15 @@ $ReservedSpaces = Get-AzureStorageTableRowByPartitionKey -table $table -partitio
 # The table is either created or has the data removed. If new PartitionKeys are added outside of the provided 4, their data will not be removed
 if($TableDoesNotExist) {
     Write-Host "Creating new table $tableName..."
-    New-AzureStorageTable –Name $tableName –Context $saContext
+    New-AzureStorageTable -Name $tableName -Context $saContext
         $CreateExampleReserve = $true
 } else {
 # Remove existing data so that it may be repopulated
     Write-Host "Removing existing data from $tableName..."
-    Get-AzureStorageTableRowByPartitionKey -table $table –partitionKey “VNet” | Remove-AzureStorageTableRow -table $table
-    Get-AzureStorageTableRowByPartitionKey -table $table –partitionKey “Subnet” | Remove-AzureStorageTableRow -table $table
-    Get-AzureStorageTableRowByPartitionKey -table $table –partitionKey “PublicIP” | Remove-AzureStorageTableRow -table $table
-    Get-AzureStorageTableRowByPartitionKey -table $table –partitionKey “ReservedSpace” | Remove-AzureStorageTableRow -table $table
+    Get-AzureStorageTableRowByPartitionKey -table $table -partitionKey "VNet" | Remove-AzureStorageTableRow -table $table
+    Get-AzureStorageTableRowByPartitionKey -table $table -partitionKey "Subnet" | Remove-AzureStorageTableRow -table $table
+    Get-AzureStorageTableRowByPartitionKey -table $table -partitionKey "PublicIP" | Remove-AzureStorageTableRow -table $table
+    Get-AzureStorageTableRowByPartitionKey -table $table -partitionKey "ReservedSpace" | Remove-AzureStorageTableRow -table $table
 }
 
 # Get the table, PIPs, and VNets
