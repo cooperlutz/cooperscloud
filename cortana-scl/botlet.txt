@@ -1,0 +1,29 @@
+########################
+# Cooper's Cloud Cortana for Azure
+########################
+
+start:
+SAY "So you want to restart a vm?"
+SAY "Here are your options:\r\nrestart a vm"
+
+GET_INPUT
+TRY
+    IF USER_INPUT == "Restart a vm"
+        GO restart_vm
+ON_ERROR
+    SAY "'${USER_INPUT}' is not a valid option"
+    GO start
+
+restart_vm:
+#help info for the user
+SAY "please say the name of your virtual machine"
+
+#get user input
+GET_INPUT
+
+#send the request
+CALL "cooper_azure.cooperautomationwebhook", "restart_vm", vm_name=USER_INPUT
+
+SAY "VM restart request initiated for '${USER_INPUT}'"
+
+END
