@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "virtualNetworkName": {
+      "type": "string",
+      "defaultValue": "CoopersCloud-VNet"
+    }
+  },
+  "variables": {
+    "subnetName1": "CCSubnet1",
+    "subnetName2": "CCSubnet2"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "name": "[parameters('virtualNetworkName')]",
+      "apiVersion": "2017-06-01",
+      "location": "[resourceGroup().location]",
+      "properties": {
+          "addressSpace": {
+              "addressPrefixes": [
+                  "10.0.0.0/16"
+              ]
+          },
+          "subnets": [
+              {
+                  "name": "[variables('subnetName1')]",
+                  "properties": {
+                      "addressPrefix": "10.0.0.0/24"
+                  }
+              },
+              {
+                  "name": "[variables('subnetName2')]",
+                  "properties": {
+                      "addressPrefix": "10.0.1.0/24"
+                  }
+              }
+          ]
+      }
+  }
+  ],
+  "outputs": {
+    "virtualNetworkName": {
+      "type": "string",
+      "value": "[parameters('virtualNetworkName')]"
+    }
+  }
+}
