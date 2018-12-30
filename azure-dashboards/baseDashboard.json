@@ -1,0 +1,21 @@
+{
+    "name": "DASHBOARDNAME",
+    "type": "Microsoft.Portal/dashboards",
+    "location": "centralus",
+    "tags": {
+        "hidden-title": "DASHBOARDTITLE"
+    },
+    "apiVersion": "2015-08-01-preview",
+    "properties": {
+        "lenses": {
+            "0": {
+                "order": 0,
+                "parts": {
+                    "0": {},
+                    "1": {},
+                    "2": {}
+                }
+            }
+        }
+    }
+}
