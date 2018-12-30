@@ -1,0 +1,128 @@
+{
+  "name": "Cooper's Cloud Dashboard",
+  "type": "Microsoft.Portal/dashboards",
+  "location": "centralus",
+  "tags": {
+    "hidden-title": "Cooper's Cloud Dashboard"
+  },
+  "apiVersion": "2015-08-01-preview",
+  "properties": {
+    "lenses": {
+      "0": {
+        "order": 0,
+        "parts": {
+          "0": {
+            "position": {
+              "x": 0,
+              "y": 0,
+              "colSpan": 5,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [],
+              "type": "Extension/HubsExtension/PartType/MarkdownPart",
+              "settings": {
+                "content": {
+                  "settings": {
+                    "content": "![alt](https://cooperscloud.tech/wp-content/uploads/2018/03/CoopersCloudLogoColor.png)",
+                    "title": "Welcome to Cooper's Cloud",
+                    "subtitle": ""
+                  }
+                }
+              }
+            }
+          },
+          "1": {
+            "position": {
+              "x": 5,
+              "y": 0,
+              "colSpan": 8,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [],
+              "type": "Extension/HubsExtension/PartType/MarkdownPart",
+              "settings": {
+                "content": {
+                  "settings": {
+                    "content": "This is the team dashboard for Cooper's Cloud. Azure reference documentation links:\r\n\r\n1. [Azure Docs](https://docs.microsoft.com/en-us/azure/)\r\n1. [Azure Reference Architecture](https://docs.microsoft.com/en-us/azure/architecture/)\r\n1. [ARM Quickstart Templates](https://github.com/Azure/azure-quickstart-templates)\r\n1. [Log Analytics Docs](https://docs.loganalytics.io/index)\r\n1. [Azure Speed](http://www.azurespeed.com/)",
+                    "title": "Documentation",
+                    "subtitle": "Cooper's Cloud"
+                  }
+                }
+              }
+            }
+          },
+          "2": {
+            "position": {
+              "x": 0,
+              "y": 4,
+              "colSpan": 6,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "ComponentId",
+                  "value": {
+                    "Name": "APPINSIGHTSRESOURCENAME",
+                    "SubscriptionId": "SUBSCRIPTIONID",
+                    "ResourceGroup": "APPINSIGHTSRESOURCEGROUP"
+                  }
+                }
+              ],
+              "type": "Extension/AppInsightsExtension/PartType/AllWebTestsResponseTimeFullGalleryAdapterPart",
+              "isAdapter": true,
+              "asset": {
+                "idInputName": "ComponentId",
+                "type": "ApplicationInsights"
+              }
+            }
+          },
+          "3": {
+            "position": {
+              "x": 6,
+              "y": 4,
+              "colSpan": 3,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [
+                {
+                  "name": "resourceType",
+                  "value": "Microsoft.Resources/resources",
+                  "isOptional": true
+                },
+                {
+                  "name": "filter",
+                  "isOptional": true
+                },
+                {
+                  "name": "scope",
+                  "isOptional": true
+                },
+                {
+                  "name": "kind",
+                  "isOptional": true
+                }
+              ],
+              "type": "Extension/HubsExtension/PartType/BrowseAllResourcesPinnedPart"
+            }
+          },
+          "4": {
+            "position": {
+              "x": 9,
+              "y": 4,
+              "colSpan": 4,
+              "rowSpan": 4
+            },
+            "metadata": {
+              "inputs": [],
+              "type": "Extension/HubsExtension/PartType/ServicesHealthPart"
+            }
+          }
+        }
+      }
+    }
+  }
+}
